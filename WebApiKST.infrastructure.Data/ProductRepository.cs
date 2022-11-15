@@ -11,7 +11,7 @@ namespace WebApiKST.infrastructure.Data
     public class ProductRepository
     {
         // public static string constr = "server=108.167.181.190;user=atahost_user_des;database=atahost_kstStore;port=3306;password=kst753";
-        public static string constr = "server=localhost;user=root;database=databasekst;port=3306;password=admin";
+        public static string constr = "server=localhost;user=root;database=atahost_kstStore;port=3306;password=admin";
         public string rutaDefecto = @"assets\images\Mangas\";
 
         public ApiResponseDTO RegisterProduct(ProductoDTO _objRegister)
@@ -27,8 +27,8 @@ namespace WebApiKST.infrastructure.Data
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@isbn", _objRegister.isbn);
-                        cmd.Parameters["@isbn"].Direction = ParameterDirection.Input;
+                        cmd.Parameters.AddWithValue("@isbnF", _objRegister.isbn);
+                        cmd.Parameters["@isbnF"].Direction = ParameterDirection.Input;
 
                         cmd.Parameters.AddWithValue("@precio", _objRegister.precio);
                         cmd.Parameters["@precio"].Direction = ParameterDirection.Input;
@@ -120,8 +120,8 @@ namespace WebApiKST.infrastructure.Data
                         cmd.Parameters.AddWithValue("@id", _objRegister.id_prod);
                         cmd.Parameters["@id"].Direction = ParameterDirection.Input;
 
-                        cmd.Parameters.AddWithValue("@isbn", _objRegister.isbn);
-                        cmd.Parameters["@isbn"].Direction = ParameterDirection.Input;
+                        cmd.Parameters.AddWithValue("@isbnF", _objRegister.isbn);
+                        cmd.Parameters["@isbnF"].Direction = ParameterDirection.Input;
 
                         cmd.Parameters.AddWithValue("@precio", _objRegister.precio);
                         cmd.Parameters["@precio"].Direction = ParameterDirection.Input;

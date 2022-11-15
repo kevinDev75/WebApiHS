@@ -11,7 +11,7 @@ namespace WebApiKST.infrastructure.Data
 {
     public class ClientRepository
     {
-        public static string constr = "server=localhost;user=root;database=databasekst;port=3306;password=admin";
+        public static string constr = "server=localhost;user=root;database=atahost_kstStore;port=3306;password=admin";
         public string rutaDefecto = @"assets\images\Mangas\";
 
 
