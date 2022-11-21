@@ -127,10 +127,19 @@ namespace WebApiKST.Controllers
                 return null;
             }
         }
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get() 
+        [HttpPost("DeleteProduct")]
+        public ActionResult<ApiResponseDTO> DeleteProduct(ProductoDTO objproducto) 
         {
-            return Ok(new string[] { "ASD" });
+            try
+            {
+                var dtresp = new ProductService().DeleteProducto(objproducto);
+                return Ok(dtresp);
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
 

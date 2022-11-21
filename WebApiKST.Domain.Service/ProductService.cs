@@ -41,7 +41,11 @@ namespace WebApiKST.Domain.Service
         {
             return new ProductRepository().UpdateProduct(_data);
         }
-        
+        public ApiResponseDTO DeleteProducto(ProductoDTO _objDelete)
+        {
+            return new ProductRepository().DeleteProduct(_objDelete);
+        }
+
         public List<ProductoDetailDTO> getProductDestacados()
         {
             return new ProductRepository().getProductDestacados();
