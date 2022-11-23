@@ -166,8 +166,8 @@ namespace WebApiKST.infrastructure.Data
                         cmd.Parameters.AddWithValue("@idproducto", _objRegister.id_prod);
                         cmd.Parameters["@idproducto"].Direction = ParameterDirection.Input;
 
-                        cmd.Parameters.AddWithValue("@isbn", _objRegister.isbn);
-                        cmd.Parameters["@isbn"].Direction = ParameterDirection.Input;
+                        cmd.Parameters.AddWithValue("@isbnF", _objRegister.isbn);
+                        cmd.Parameters["@isbnF"].Direction = ParameterDirection.Input;
 
                         cmd.Parameters.AddWithValue("@precio", _objRegister.precio);
                         cmd.Parameters["@precio"].Direction = ParameterDirection.Input;
@@ -220,7 +220,7 @@ namespace WebApiKST.infrastructure.Data
                         var ex = cmd.ExecuteNonQuery();
                         if (ex != -1)
                         {
-                            resp.pcode = Int32.Parse(cmd.Parameters["@pcode"].Value.ToString());
+                            resp.pcode =  Convert.ToInt32(cmd.Parameters["@pcode"].Value);
                             resp.pmessage = cmd.Parameters["@pmessage"].Value.ToString();
                         }
                         else
